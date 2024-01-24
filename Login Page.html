@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    
+</head>
+<body>
+    <h1>User Login</h1>
+
+    <button onclick="showLoginForm()">Login</button>
+    <div id="loginForm" style="display: none;">
+        <form onsubmit="return loginUser()">
+            <p>
+                <label for="loginEmail">Email:</label>  <input type="email" placeholder="Enter your email" id="loginEmail" required>
+            </p>
+            <p>
+                <input type="submit" value="Login">
+            </p>
+        </form>
+    </div>
+
+    <div id="welcomeMessage" style="display: none;">
+        <h2>Welcome <span id="userName"></span>!</h2>
+    </div>
+
+    <div id="errorNotification" class="error" style="display: none;"></div>
+
+    <script>
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('welcomeMessage').style.display = 'none';
+            document.getElementById('errorNotification').style.display = 'none';
+        }
+
+        function registerUser() {
+            
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            
+            alert('Registration successful! Verification mail sent to ' + email);
+
+            return false; 
+        }
+
+        function loginUser() {
+            
+            var loginEmail = document.getElementById('loginEmail').value;
+
+            document.getElementById('userName').innerText = loginEmail;
+            document.getElementById('welcomeMessage').style.display = 'block';
+
+            return false; 
+        }
+    </script>
+</body>
+</html>
