@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+
+    <button onclick="showRegisterForm()">Register</button>
+
+    <div id="registerForm" style="display: none;">
+        <form onsubmit="return registerUser()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+    <a href="Login.html">Login</a>
+
+    <script>
+        function showRegisterForm() {
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        function registerUser() {
+            // Perform registration logic here
+
+            // Send verification mail with activation link
+
+            // After registration, you can redirect to the login page or update the UI accordingly
+            alert('Registration successful! Verification mail sent.');
+            return false; // Prevent form submission for this example
+        }
+    </script>
+
+</body>
+</html>
